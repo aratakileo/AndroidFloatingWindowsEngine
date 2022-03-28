@@ -19,6 +19,7 @@ Floating windows engine for Android
 Other:
 - [FloatingPermissions](#floatingpermissions)
 - [FloatingObject](#floatingobject)
+  - [Flags](#flags)
 - [FloatingObject (Example)](#floatingobject-example)
 
 Windows:
@@ -62,6 +63,28 @@ val floatingObject = FloatingObject(
     15,                            // position Y at screen
     FloatingObject.FLAG_DRAGGABLE  // flags (0 - defaul value)
 )
+```
+#### Flags
+
+`FloatingObject.FLAG_DRAGGABLE` (allows to move an object across the screen)
+```kt
+const val FLAG_DRAGGABLE =         1 shl 0
+```
+[`FloatingObject.FLAG_LAYOUT_NO_LIMITS`](https://developer.android.com/reference/android/view/WindowManager.LayoutParams#FLAG_LAYOUT_NO_LIMITS)
+```kt
+const val FLAG_LAYOUT_NO_LIMITS =  1 shl 1
+```
+[`FloatingObject.FLAG_LAYOUT_IN_SCREEN`](https://developer.android.com/reference/android/view/WindowManager.LayoutParams#FLAG_LAYOUT_IN_SCREEN)
+```kt
+const val FLAG_LAYOUT_IN_SCREEN =  1 shl 2
+```
+[`FloatingObject.FLAG_ANDROID_SECURE`](https://developer.android.com/reference/android/view/WindowManager.LayoutParams#FLAG_SECURE)
+```kt
+const val FLAG_ANDROID_SECURE =    1 shl 3
+```
+[`FloatingObject.FLAG_ANDROID_FOCUSABLE`](https://developer.android.com/reference/android/view/WindowManager.LayoutParams#FLAG_NOT_FOCUSABLE) (If specified cancels the flag `WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE`)
+```kt
+const val FLAG_ANDROID_FOCUSABLE = 1 shl 4
 ```
 
 ### FloatingObject (Example)
