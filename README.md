@@ -16,14 +16,17 @@ Floating windows engine for Android
 
 # How to use
 ### Navigation
+Windows:
+- [BaseWindow](#basewindow)
+
 Other:
 - [FloatingPermissions](#floatingpermissions)
 - [FloatingObject](#floatingobject)
   - [Flags](#flags)
 - [FloatingObject (Example)](#floatingobject-example)
 
-Windows:
-- [BaseWindow](#basewindow)
+### BaseWindow
+
 ### FloatingPermissions
 Allows you to check/get the necessary permissions.
 
