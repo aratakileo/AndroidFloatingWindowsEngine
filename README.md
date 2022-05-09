@@ -18,19 +18,58 @@ Floating windows engine for Android
 ### Navigation
 Windows:
 - [BaseWindow](#basewindow)
+  - [Flags](#flags)
 
 Other:
 - [FloatingPermissions](#floatingpermissions)
 - [FloatingObject](#floatingobject)
-  - [Flags](#flags)
+  - [Flags](#flags-1)
 - [FloatingObject (Example)](#floatingobject-example)
 
 ### BaseWindow
+To use (`MainActivity.kt`)
+```kt
+import pexty.floatingapp.window.BaseWindow
+```
+
+Initialize (`MainActivity.kt`)
+```kt
+val baseWindow = BaseWindow(
+    this,           // context
+    800,            // window width
+    800,            // window height
+    0,              // window position X at screen (0 - default value)
+    0,              // window position Y at screen (0 - default value)
+    "Base Window",  // window title ("Floating Window" - default value)
+    0               // flags (0 - default value)
+)
+```
+
+Open window (`MainActivity.kt`)
+```kt
+baseWindow.open()
+```
+
+Close window (`MainActivity.kt`)
+```kt
+baseWindow.close()
+```
+
+Kill window (`MainActivity.kt`) - it differs from the `close()` function in that it does not send a request to the window to close it, but closes it immediately by force
+```kt
+baseWindow.kill()
+```
+
+#### Flags
+`BaseWindow.FLAG_WINDOW_NOT_DRAGGABLE` (If specified cancels the flag [`FloatingObject.FLAG_DRAGGABLE`](#flags-1))
+```kt
+const val FLAG_WINDOW_NOT_DRAGGABLE = 1 shl 0
+```
 
 ### FloatingPermissions
 Allows you to check/get the necessary permissions.
 
-To use
+To use (`MainActivity.kt`)
 ```kt
 import pexty.floatingapp.FloatingPermissions
 ```
@@ -52,7 +91,7 @@ if (!FloatingPermissions.has(this))
 ### FloatingObject
 Allows you to make floating view
 
-To use
+To use (`MainActivity.kt`)
 ```kt
 import pexty.floatingapp.FloatingObject
 ```
@@ -71,21 +110,21 @@ val floatingObject = FloatingObject(
 
 `FloatingObject.FLAG_DRAGGABLE` (allows to move an object across the screen)
 ```kt
-const val FLAG_DRAGGABLE =         1 shl 0
+const val FLAG_DRAGGABLE = 1 shl 0
 ```
 [`FloatingObject.FLAG_LAYOUT_NO_LIMITS`](https://developer.android.com/reference/android/view/WindowManager.LayoutParams#FLAG_LAYOUT_NO_LIMITS)
 ```kt
-const val FLAG_LAYOUT_NO_LIMITS =  1 shl 1
+const val FLAG_LAYOUT_NO_LIMITS = 1 shl 1
 ```
 [`FloatingObject.FLAG_LAYOUT_IN_SCREEN`](https://developer.android.com/reference/android/view/WindowManager.LayoutParams#FLAG_LAYOUT_IN_SCREEN)
 ```kt
-const val FLAG_LAYOUT_IN_SCREEN =  1 shl 2
+const val FLAG_LAYOUT_IN_SCREEN = 1 shl 2
 ```
 [`FloatingObject.FLAG_ANDROID_SECURE`](https://developer.android.com/reference/android/view/WindowManager.LayoutParams#FLAG_SECURE)
 ```kt
-const val FLAG_ANDROID_SECURE =    1 shl 3
+const val FLAG_ANDROID_SECURE = 1 shl 3
 ```
-[`FloatingObject.FLAG_ANDROID_FOCUSABLE`](https://developer.android.com/reference/android/view/WindowManager.LayoutParams#FLAG_NOT_FOCUSABLE) (If specified cancels the flag `WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE`)
+`FloatingObject.FLAG_ANDROID_FOCUSABLE` (If specified cancels the flag [`WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE`](https://developer.android.com/reference/android/view/WindowManager.LayoutParams#FLAG_NOT_FOCUSABLE))
 ```kt
 const val FLAG_ANDROID_FOCUSABLE = 1 shl 4
 ```
