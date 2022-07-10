@@ -19,6 +19,8 @@ Floating windows engine for Android
 Windows:
 - [BaseWindow](#basewindow)
   - [Flags](#flags)
+- [FloatingWindow](#floatingwindow)
+- [WindowManager](#windowmanager)
 
 Other:
 - [FloatingPermissions](#floatingpermissions)
@@ -40,7 +42,7 @@ val baseWindow = BaseWindow(
     800,            // window height
     0,              // window position X at screen (0 - default value)
     0,              // window position Y at screen (0 - default value)
-    "Base Window",  // window title ("Floating Window" - default value)
+    "My Window",  // window title ("Floating Window" - default value)
     0               // flags (0 - default value)
 )
 ```
@@ -64,6 +66,68 @@ baseWindow.kill()
 `BaseWindow.FLAG_WINDOW_NOT_DRAGGABLE` (If specified cancels the flag [`FloatingObject.FLAG_DRAGGABLE`](#flags-1))
 ```kt
 const val FLAG_WINDOW_NOT_DRAGGABLE = 1 shl 0
+```
+
+### FloatingWindow
+This class extends [`BaseWindow`](#basewindow).
+
+To use (`MainActivity.kt`)
+```kt
+import pexty.floatingapp.window.FloatingWindow
+```
+
+Initialize (`MainActivity.kt`)
+```kt
+val floatingWindow = FloatingWindow(
+    this,           // context
+    800,            // window width
+    800,            // window height
+    0,              // window position X at screen (0 - default value)
+    0,              // window position Y at screen (0 - default value)
+    "My Window",  // window title ("Floating Window" - default value)
+    0               // flags (0 - default value)
+)
+```
+
+Set content view (`MainActivity.kt`)
+```kt
+floatingWindow.setContentView(ImageView(this))
+```
+
+Get content view (`MainActivity.kt`)
+```kt
+println(floatingWindow.getContentView())
+```
+
+Remove content view (`MainActivity.kt`)
+```kt
+floatingWindow.removeContentView()
+```
+
+Set content background color (`MainActivity.kt`)
+```kt
+floatingWindow.setContentBackgroundColor(Color.BLACK)
+```
+
+### WindowManager
+`object` (`final class` in Java) for controlling all flosting windows.
+
+To use (`MainActivity.kt`)
+```kt
+import pexty.floatingapp.window.WindowManager
+```
+
+Calls all windows `close()` method (`MainActivity.kt`)
+```kt
+WindowManager.closeAll()
+```
+Calls all windows `kill()` method (`MainActivity.kt`)
+```kt
+WindowManager.killAll()
+```
+Calls all windows `close()` method, but if after this method was called window is not closed, then calls `kill()` wethod for that window (`MainActivity.kt`)
+```kt
+WindowManager.softKillAll()
 ```
 
 ### FloatingPermissions
