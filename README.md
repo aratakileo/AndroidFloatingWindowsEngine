@@ -2,8 +2,8 @@
 Floating windows engine for Android
 
 ### First API Version (OLD)
-<a href="https://github.com/TeaCondemns/android-libs-FloatingWindows">
-  <img align="" src="https://github-readme-stats.vercel.app/api/pin/?username=teacondemns&repo=android-libs-FloatingWindows&theme=github_dark" />
+<a href="https://github.com/teacondemns/FloatingWindows">
+  <img align="" src="https://github-readme-stats.vercel.app/api/pin/?username=teacondemns&repo=FloatingWindows&theme=github_dark" />
 </a>
 
 ### Navigation
