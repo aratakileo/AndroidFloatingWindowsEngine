@@ -37,13 +37,13 @@ import pexty.floatingapp.window.BaseWindow
 Initialize (`MainActivity.kt`)
 ```kt
 val baseWindow = BaseWindow(
-    this,           // context
-    800,            // window width
-    800,            // window height
-    0,              // window position X at screen (0 - default value)
-    0,              // window position Y at screen (0 - default value)
-    "My Window",    // window title ("Floating Window" - default value)
-    0               // flags (0 - default value)
+    this,         // context
+    800,          // window width
+    800,          // window height
+    0,            // window position X at screen (0 - default value)
+    0,            // window position Y at screen (0 - default value)
+    "My Window",  // window title ("Floating Window" - default value)
+    0             // flags (0 - default value)
 )
 ```
 
@@ -79,13 +79,13 @@ import pexty.floatingapp.window.FloatingWindow
 Initialize (`MainActivity.kt`)
 ```kt
 val floatingWindow = FloatingWindow(
-    this,           // context
-    800,            // window width
-    800,            // window height
-    0,              // window position X at screen (0 - default value)
-    0,              // window position Y at screen (0 - default value)
+    this,         // context
+    800,          // window width
+    800,          // window height
+    0,            // window position X at screen (0 - default value)
+    0,            // window position Y at screen (0 - default value)
     "My Window",  // window title ("Floating Window" - default value)
-    0               // flags (0 - default value)
+    0             // flags (0 - default value)
 )
 ```
 
