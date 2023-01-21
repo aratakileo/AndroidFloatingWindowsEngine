@@ -42,7 +42,7 @@ val baseWindow = BaseWindow(
     800,            // window height
     0,              // window position X at screen (0 - default value)
     0,              // window position Y at screen (0 - default value)
-    "My Window",  // window title ("Floating Window" - default value)
+    "My Window",    // window title ("Floating Window" - default value)
     0               // flags (0 - default value)
 )
 ```
